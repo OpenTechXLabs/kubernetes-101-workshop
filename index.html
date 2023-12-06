@@ -69,13 +69,13 @@
         <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
 		
 		<p><br>Execute below command to see the deployment.</p>
-		<code id="command1">kubectl get deployments</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+		<code id="command2">kubectl get deployments</code>
+        <span class="copy-icon" onclick="copyToClipboard('command2')">📋</span>
 		<br>
 		
 		<p><br>Execute below command to list the pods.</p>
-		<code id="command1">kubectl get pods</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+		<code id="command3">kubectl get pods</code>
+        <span class="copy-icon" onclick="copyToClipboard('command3')">📋</span>
 		<br>
 		<p><br>You should see output as below:</p>
     </div>
@@ -97,12 +97,12 @@
 		<br>
 		
         <p>Execute below command to expose the application.</p>
-        <code id="command1">kubectl expose deployment foodmenu-deployment --type=NodePort --port=80</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command4">kubectl expose deployment foodmenu-deployment --type=NodePort --port=80</code>
+        <span class="copy-icon" onclick="copyToClipboard('command4')">📋</span>
 		
 		<p><br>Execute below command to see the service.</p>
-		<code id="command1">kubectl get services</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+		<code id="command5">kubectl get services</code>
+        <span class="copy-icon" onclick="copyToClipboard('command5')">📋</span>
 		<br>
 
 		<p><br>You should see output as below:</p>
@@ -113,8 +113,8 @@
 		<p>To access the application we need the IP address of the terminal node.</p>
 
         <p>Execute below command which will replace the string PORT with 80 and then prints the url of the host.</p>
-        <code id="command1">sed 's/PORT/80/g' /etc/killercoda/host</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command6">sed 's/PORT/80/g' /etc/killercoda/host</code>
+        <span class="copy-icon" onclick="copyToClipboard('command6')">📋</span>
 		<p>Copy the url you see and make note of it.</p>
 		<p><br></p>
 		
@@ -128,8 +128,8 @@
 		<p>This command creates a service. The service is mapped to the deployment. This way it knows which are the pods running as part of the deployment.</p>
 		
 		<p><br>Execute below command to port-forward the service.</p>
-		<code id="command1">kubectl port-forward --address 0.0.0.0 service/foodmenu-deployment 80:80</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+		<code id="command7">kubectl port-forward --address 0.0.0.0 service/foodmenu-deployment 80:80</code>
+        <span class="copy-icon" onclick="copyToClipboard('command7')">📋</span>
 		<br>
 		
 		<p>Now, open the url in the browser to see the application webpage.</p>
@@ -150,12 +150,12 @@
 		<p><b>kubectl scale --replicas=COUNT deployment DEPLOYMENT_NAME</b></p>
 		
         <p><br>Execute below command which will scale the application from 1 pod to 5 pods.</p>
-        <code id="command1">kubectl scale --replicas=5 deployment foodmenu-deployment</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command8">kubectl scale --replicas=5 deployment foodmenu-deployment</code>
+        <span class="copy-icon" onclick="copyToClipboard('command8')">📋</span>
 		
 		<p><br>Execute below command to see the pods.</p>
-		<code id="command1">kubectl get pods -w</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+		<code id="command9">kubectl get pods -w</code>
+        <span class="copy-icon" onclick="copyToClipboard('command9')">📋</span>
 		<br>
 
 		<p><br>You should see output as below:</p>
@@ -174,12 +174,12 @@
 		<p><b>kubectl scale --replicas=COUNT deployment DEPLOYMENT_NAME</b></p>
 		
         <p><br>Execute below command which will scale the application from 1 pod to 5 pods.</p>
-        <code id="command1">kubectl scale --replicas=3 deployment foodmenu-deployment</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command10">kubectl scale --replicas=3 deployment foodmenu-deployment</code>
+        <span class="copy-icon" onclick="copyToClipboard('command10')">📋</span>
 		
 		<p><br>Execute below command to see the pods.</p>
-		<code id="command1">kubectl get pods -w</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+		<code id="command11">kubectl get pods -w</code>
+        <span class="copy-icon" onclick="copyToClipboard('command11')">📋</span>
 		<br>
 
 		<p><br>You should see output as below:</p>
@@ -190,8 +190,8 @@
 		<p>By default, the deployment creates one replica of the application. This means that only one pod is created for the application.</p>
 		
         <p><br>Execute below command which will scale the application from 1 pod to 5 pods.</p>
-        <code id="command1">kubectl get events</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command12">kubectl get events</code>
+        <span class="copy-icon" onclick="copyToClipboard('command12')">📋</span>
 
 		<p><br>You should see output as below:</p>
     </div>
@@ -204,12 +204,12 @@
 		<p><b>kubectl set image deployment/DEPLOYMENT_NAME CONTAINER_NAME=IMAGE_NAME:TAG</b></p>
 		
         <p><br>Execute below command which will updates the deployment to change the image details to v2 tag.</p>
-        <code id="command1">kubectl set image deployment/foodmenu-deployment food-menu-website=ckr123/food-menu-website:v2</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command13">kubectl set image deployment/foodmenu-deployment food-menu-website=ckr123/food-menu-website:v2</code>
+        <span class="copy-icon" onclick="copyToClipboard('command13')">📋</span>
 		
 		<p><br>Execute below command to see the pods.</p>
-		<code id="command1">kubectl get pods -w</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+		<code id="command14">kubectl get pods -w</code>
+        <span class="copy-icon" onclick="copyToClipboard('command14')">📋</span>
 		<br>
 		
 		<p><br>You should see output as below:</p>
@@ -220,12 +220,12 @@
 		<p>Let's clean-up the application on the cluster.</p>
 		
         <p><br>Execute below command to remove the application from the cluster.</p>
-        <code id="command1">kubectl delete deployment foodmenu-deployment</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command15">kubectl delete deployment foodmenu-deployment</code>
+        <span class="copy-icon" onclick="copyToClipboard('command15')">📋</span>
 
         <p><br>Execute below command to remove the service from the cluster.</p>
-        <code id="command1">kubectl delete service foodmenu-deployment</code>
-        <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
+        <code id="command16">kubectl delete service foodmenu-deployment</code>
+        <span class="copy-icon" onclick="copyToClipboard('command16')">📋</span>
 		
 		<p><br>You should see output as below:</p>
     </div>
