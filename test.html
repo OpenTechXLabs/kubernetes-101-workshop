@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes 101 Workshop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        h1::before, h2::before {
+            content: '+ ';
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        h1.collapsible::before, h2.collapsible::before {
+            content: '- ';
+        }
+
+        h1.collapsible:hover, h2.collapsible:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #000; /* Set the background color to black */
+            color: #fff; /* Set the text color to white */
+            padding: 4px 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: monospace;
+            position: relative;
+        }
+
+        .copy-icon {
+            cursor: pointer;
+        }
+
+        .copy-message {
+            position: absolute;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .image-item {
+            background-color: #fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="collapsible" onclick="toggleSection('aboutSection')">About the Hands-on Lab Workshop</h1>
+    <div id="aboutSection">
+        <!-- ... (content) ... -->
+    </div>
+
+    <h2 class="collapsible" onclick="toggleSection('section1')">1. Create a Deployment</h2>
+    <div id="section1">
+        <p>"Service" is an abstract way to expose an application over the network. These applications will be running on a set of Pods.</p>
+		<p> It provides a stable endpoint (IP address and port) to interact with the application, abstracting away the complexity of the dynamic changes in the underlying infrastructure.</p>
+		
+		<br>
+		<p>The syntax of kubectl command to expose a application is as below:</p>
+		<p><b>kubectl expose deployment DEPLOYMENT_NAME--type=SERVICE_TYPE --port=SERVICE_PORT</b></p>
+		
+		<p>This command creates a service. The service is mapped to the deployment. This way it knows which are the pods running as part of the deployment.</p>
+		<br>
+		
+        <p>Execute below command to expose the application.</p>
+        <code id="command4">kubectl expose deployment foodmenu-deployment --type=NodePort --port=80</code>
+        <span class="copy-icon" onclick="copyToClipboard('command4')">📋</span>
+		
+		<p><br>Execute below command to see the service.</p>
+		<code id="command5">kubectl get services</code>
+        <span class="copy-icon" onclick="copyToClipboard('command5')">📋</span>
+		<br>
+
+		<p><br>You should see output as below:</p>
+    </div>
+
+    <!-- ... (similar sections for other h2 headers) ... -->
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+
+            const header = document.querySelector(`#${sectionId} + h${sectionId.startsWith('section') ? '2' : '1'}`);
+            header.classList.toggle('collapsible');
+        }
+
+        function copyToClipboard(elementId) {
+            // ... (unchanged)
+        }
+    </script>
+</body>
+</html>

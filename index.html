@@ -33,6 +33,11 @@
             display: none;
         }
 		
+		h2 {
+            color: #0066cc; /* Set h1 color to a specific shade of blue */
+            cursor: pointer;
+        }
+		
 		.image-item {
             background-color: #fff;
             margin: 10px;
@@ -46,10 +51,18 @@
 		<p>The application is built using a HTML file and images. These files are packaged into a Docker image.</p>
 		<p>The Docker image is present on the public <a href="https://hub.docker.com/repository/docker/ckr123/food-menu-website/general">Docker Hub registry</a></p>
 		<br>
+		<p>Using kubectl commands, we will create below mentioned resources (marked in green square).</p>
+		<br>
+		
+		<div class="image-item">
+			<img src="workshop-overview.png" alt="workshop-overview">
+		</div>
+		<br>
 		
 		<p><b>Open the terminal using below url</b></p>
-		<a href="https://killercoda.com/playgrounds/scenario/kubernetes">Kubernetes Terminal</a></p>
-		<p>This is a playground terminal by Killercoda. We can use this for one hour in free account. Login to the terminal using your gmail account.</p>
+		<a href="https://killercoda.com/playgrounds/scenario/kubernetes">💻 Kubernetes Terminal</a></p>
+		<p>This is a playground terminal by Killercoda. We can use this for one hour in free account. Login to the terminal using your <b>Gmail account.</b></p>
+		<p><b>Note:</b> Please use only the right side terminal window.</p>
 		<br>
 		
 		<h2>1. Create a Deployment</h2>
@@ -64,7 +77,8 @@
 		<p>This command creates a deployment. The deployment will create a replicaset which in-turn will create the containers. The specified docker image will be pulled from the docker hub registry and container gets created using the docker image. The container gets exposed on the specified port.</p>
 		<br>
 		
-        <p>Copy the following command and execute on the terminal.</p>
+        <p>Copy the below command by clicking on the copy icon.</p>
+		<p>Right click and paste on the terminal and press enter to execute the command.</p>
         <code id="command1">kubectl create deployment foodmenu-deployment --image=ckr123/food-menu-website:v1 --port=80</code>
         <span class="copy-icon" onclick="copyToClipboard('command1')">📋</span>
 		
@@ -77,7 +91,7 @@
 		<code id="command3">kubectl get pods</code>
         <span class="copy-icon" onclick="copyToClipboard('command3')">📋</span>
 		<br>
-		<p><br>You should see output as below:</p>
+		<p><br><u>You should see output as below:</u></p>
     </div>
 	
 	<div class="image-item">
@@ -85,7 +99,8 @@
     </div>
 	<br>
 
-		<h2>2. Create a Service</h2>
+	<h2>2. Create a Service</h2>
+	<div>
 		<p>"Service" is an abstract way to expose an application over the network. These applications will be running on a set of Pods.</p>
 		<p> It provides a stable endpoint (IP address and port) to interact with the application, abstracting away the complexity of the dynamic changes in the underlying infrastructure.</p>
 		
@@ -105,11 +120,17 @@
         <span class="copy-icon" onclick="copyToClipboard('command5')">📋</span>
 		<br>
 
-		<p><br>You should see output as below:</p>
-		<br>
+		<p><br><u>You should see output as below:</u></p>
     </div>
+	
+	<div class="image-item">
+        <img src="image2.png" alt="image2">
+    </div>
+	<br>
 
-		<h2>3. Access the application</h2>
+
+	<h2>3. Access the application</h2>
+	<div>
 		<p>To access the application we need the IP address of the terminal node.</p>
 
         <p>Execute below command which will replace the string PORT with 80 and then prints the url of the host.</p>
@@ -134,11 +155,17 @@
 		
 		<p>Now, open the url in the browser to see the application webpage.</p>
 
-		<p><br>You should see output as below:</p>
+		<p><br><u>You should see output as below:</u></p>
+    </div>
+	
+	<div class="image-item">
+        <img src="image3.png" alt="image3">
     </div>
 	<br>
 
+
 	<h2>4. Scale up the application</h2>
+	<div>
 		<p>By default, the deployment creates one replica of the application. This means that only one pod is created for the application.</p>
 		<p>So if this pod crashes then the application page will not be accessible.</p>
 		
@@ -158,11 +185,17 @@
         <span class="copy-icon" onclick="copyToClipboard('command9')">📋</span>
 		<br>
 
-		<p><br>You should see output as below:</p>
+		<p><br><u>You should see output as below:</u></p>
+    </div>
+	
+	<div class="image-item">
+        <img src="image4.png" alt="image4">
     </div>
 	<br>
+
 	
 	<h2>5. Scale down the application</h2>
+	<div>
 		<p>By default, the deployment creates one replica of the application. This means that only one pod is created for the application.</p>
 		<p>So if this pod crashes then the application page will not be accessible.</p>
 		
@@ -182,22 +215,30 @@
         <span class="copy-icon" onclick="copyToClipboard('command11')">📋</span>
 		<br>
 
-		<p><br>You should see output as below:</p>
+		<p><br><u>You should see output as below:</u></p>
+    </div>
+	
+	<div class="image-item">
+        <img src="image5.png" alt="image5">
     </div>
 	<br>
 
+
 	<h2>6. See cluster wide events</h2>
+	<div>
 		<p>By default, the deployment creates one replica of the application. This means that only one pod is created for the application.</p>
 		
         <p><br>Execute below command which will scale the application from 1 pod to 5 pods.</p>
         <code id="command12">kubectl get events</code>
         <span class="copy-icon" onclick="copyToClipboard('command12')">📋</span>
 
-		<p><br>You should see output as below:</p>
+		<p><br><u>You should see output as below:</u></p>
     </div>
 	<br>
+
 	
 	<h2>7. Deploy new version of the application</h2>
+	<div>
 		<p>Let's deploy version 2 of the application.</p>
 
 		<p>The syntax of kubectl command to change the image of the application is as below:</p>
@@ -212,12 +253,17 @@
         <span class="copy-icon" onclick="copyToClipboard('command14')">📋</span>
 		<br>
 		
-		<p><br>You should see output as below:</p>
+		<p><br><u>You should see output as below:</u></p>
+    </div>
+	
+	<div class="image-item">
+        <img src="image7.png" alt="image7">
     </div>
 	<br>
 
 	<h2>8. Remove the application</h2>
-		<p>Let's clean-up the application on the cluster.</p>
+	<div>
+		<p>Let's clean-up the deployment and service on the cluster.</p>
 		
         <p><br>Execute below command to remove the application from the cluster.</p>
         <code id="command15">kubectl delete deployment foodmenu-deployment</code>
@@ -227,8 +273,21 @@
         <code id="command16">kubectl delete service foodmenu-deployment</code>
         <span class="copy-icon" onclick="copyToClipboard('command16')">📋</span>
 		
-		<p><br>You should see output as below:</p>
+		<p><br>Execute below command to list the deployments.</p>
+        <code id="command17">kubectl get deployment</code>
+        <span class="copy-icon" onclick="copyToClipboard('command17')">📋</span>
+
+        <p><br>Execute below command to list the pods.</p>
+        <code id="command18">kubectl get service</code>
+        <span class="copy-icon" onclick="copyToClipboard('command18')">📋</span>
+		
+		<p><br><u>You should see output as below:</u></p>
     </div>
+	
+	<div class="image-item">
+        <img src="image8.png" alt="image8">
+    </div>
+	<br>
 
 
 	<script>
