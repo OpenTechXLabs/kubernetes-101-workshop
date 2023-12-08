@@ -72,14 +72,15 @@
         <img src="opentechx-logo.png" alt="Logo" style="height: 50px;">
 	</header>
 	
-    <h1>Kubernetes 101</h1>
+    <h1>Kubernetes 101 ☸️</h1>
     <div>
-		<h2>About the Hands-on Lab</h2>
+		<br>
+		<h2>About the Hands-on Lab 🧑‍💻</h2>
 	    <p>In this hands-on lab workshop, we are going to deploy a static website into Kubernetes cluster.</p>
 		<p>The application is built using a HTML file and images. These files are packaged into a Docker image.</p>
-		<p>The Docker image is stored on the public <a href="https://hub.docker.com/repository/docker/ckr123/food-menu-website/general">Docker Hub registry</a></p>
+		<p>The Docker image is stored on the public <a href="https://hub.docker.com/repository/docker/ckr123/food-menu-website/general">Docker Hub registry</a> 🐋</p>
 		<br>
-		<p>Using kubectl commands, we will create below mentioned resources (marked in green square).</p>
+		<p>Using kubectl commands, we will create resources as per below image (marked in green square). 🟩</p>
 		<br>
 		
 		<div class="image-item">
@@ -90,10 +91,10 @@
 		<p><b>Open the terminal using below url</b></p>
 		<a href="https://killercoda.com/playgrounds/scenario/kubernetes">💻 Kubernetes Terminal</a></p>
 		<p>This is a playground terminal by Killercoda. We can use this for one hour in free account. Login to the terminal using your <b>Gmail account.</b></p>
-		<p><b>Note:</b> Please use only the right side terminal window.</p>
+		<p><b>⚠️ Note:</b> Please use only the right side terminal window.</p>
 		<br>
 		
-		<h2>1. Create a Deployment</h2>
+		<h2>1. Create a Deployment 🚀</h2>
 		<p>Deployment as an instance of an application with it’s associated configuration.</p>
 		<p>The Deployment resource provides a way to describe, create, and update instances of your applications.</p>
 		<p>In simple terms, we can think of it as a blueprint of the application containers.</p>
@@ -102,7 +103,8 @@
 		<p>The syntax of kubectl command to create deployment is as below:</p>
 		<p><b>kubectl create deployment DEPLOYMENT_NAME --image=IMAGE_NAME:TAG --port=CONTAINER_PORT</b></p>
 		
-		<p>This command creates a deployment. The deployment will create a replicaset which in-turn will create the containers. The specified docker image will be pulled from the docker hub registry and container gets created using the docker image. The container gets exposed on the specified port.</p>
+		<p>This command creates a deployment. The deployment will create a replicaset which in-turn will create the containers.</p>
+		<p>The specified docker image will be pulled from the docker hub registry and container gets created using the docker image. The container gets exposed on the specified port.</p>
 		<br>
 		
         <p>Copy the below command by clicking on the copy icon.</p>
@@ -127,7 +129,7 @@
     </div>
 	<br>
 
-	<h2>2. Create a Service</h2>
+	<h2>2. Create a Service ⚙️</h2>
 	<div>
 		<p>"Service" is an abstract way to expose an application over the network. These applications will be running on a set of Pods.</p>
 		<p> It provides a stable endpoint (IP address and port) to interact with the application, abstracting away the complexity of the dynamic changes in the underlying infrastructure.</p>
@@ -157,7 +159,7 @@
 	<br>
 
 
-	<h2>3. Access the application</h2>
+	<h2>3. Access the application 🌐</h2>
 	<div>
 		<p>To access the application we need the IP address of the terminal node.</p>
 
@@ -169,19 +171,20 @@
 		
 		<p>Let's use the method of port-forward to access the application.</p>
 		
-		<p>The <b>kubectl port-forward</b> command is used in Kubernetes to create a network tunnel between your local machine and a pod running in the Kubernetes cluster. This command allows you to access resources inside the cluster as if they were running locally on your machine.</p>
+		<p>The <b>kubectl port-forward</b> command is used in Kubernetes to create a network tunnel between your local machine and a pod running in the Kubernetes cluster.</p>
+		<p>This command allows you to access resources inside the cluster as if they were running locally on your machine.</p>
+		<br>
 
 		<p>The syntax of the port-forward command is as below:</p>
 		<p><b>kubectl port-forward --address 0.0.0.0 service/SERVICE_NAME LOCAL_PORT:SERVICE_PORT</b></p>
-		
-		<p>This command creates a service. The service is mapped to the deployment. This way it knows which are the pods running as part of the deployment.</p>
 		
 		<p><br>Execute below command to port-forward the service.</p>
 		<code id="command7">kubectl port-forward --address 0.0.0.0 service/foodmenu-deployment 80:80</code>
         <span class="copy-icon" onclick="copyToClipboard('command7')">📋</span>
 		<br>
 		
-		<p>Now, open the url in the browser to see the application webpage.</p>
+		<p>Now, click on the url in the browser to see the application webpage.</p>
+		<p>⚠️ The url will be like the one highlighted with blue line. Reference as shown in the below image.</p>
 
 		<p><br><u>You should see output as below:</u></p>
     </div>
@@ -192,7 +195,7 @@
 	<br>
 
 
-	<h2>4. Scale up the application</h2>
+	<h2>4. Scale up the application 📈</h2>
 	<div>
 		<p>By default, the deployment creates one replica of the application. This means that only one pod is created for the application.</p>
 		<p>So if this pod crashes then the application page will not be accessible.</p>
@@ -222,7 +225,7 @@
 	<br>
 
 	
-	<h2>5. Scale down the application</h2>
+	<h2>5. Scale down the application 📉</h2>
 	<div>
 		<p>By default, the deployment creates one replica of the application. This means that only one pod is created for the application.</p>
 		<p>So if this pod crashes then the application page will not be accessible.</p>
@@ -252,7 +255,7 @@
 	<br>
 
 
-	<h2>6. See cluster wide events</h2>
+	<h2>6. See cluster wide events 🔎</h2>
 	<div>
 		<p>By default, the deployment creates one replica of the application. This means that only one pod is created for the application.</p>
 		
@@ -265,7 +268,7 @@
 	<br>
 
 	
-	<h2>7. Deploy new version of the application</h2>
+	<h2>7. Deploy new version of the application 📦 🐋</h2>
 	<div>
 		<p>Let's deploy version 2 of the application.</p>
 
@@ -289,7 +292,7 @@
     </div>
 	<br>
 
-	<h2>8. Remove the application</h2>
+	<h2>8. Remove the application 🗑️</h2>
 	<div>
 		<p>Let's clean-up the deployment and service on the cluster.</p>
 		
