@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes hands-on Workshop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        h1::before, h2::before {
+            content: '+ ';
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        h1.collapsible::before, h2.collapsible::before {
+            content: '- ';
+        }
+
+        h1.collapsible:hover, h2.collapsible:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #000; /* Set the background color to black */
+            color: #fff; /* Set the text color to white */
+            padding: 4px 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: monospace;
+            position: relative;
+        }
+
+        .copy-icon {
+            cursor: pointer;
+        }
+
+        .copy-message {
+            position: absolute;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+		
+		h2 {
+            color: #0066cc; /* Set h1 color to a specific shade of blue */
+            cursor: pointer;
+        }
+		
+		.image-item {
+            background-color: #fff;
+            margin: 10px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer img {
+            height: 50px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="your-logo.png" alt="Logo" style="height: 50px;"> <!-- Replace 'your-logo.png' with your logo image path -->
+        <h1>About the Hands-on Lab</h1>
+    </header>
+
+    <!-- Rest of the content -->
+
+    <footer>
+        <p>&copy; 2023 Our Workshop</p>
+    </footer>
+
+    <script>
+        // ... (unchanged)
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kubernetes 101 Workshop</title>
+    <title>Kubernetes hands-on Workshop</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,8 +33,12 @@
             display: none;
         }
 		
+		h1 {
+            text-align: left;
+        }
+		
 		h2 {
-            color: #0066cc; /* Set h1 color to a specific shade of blue */
+            color: #0066cc; /* Set h2 color to a specific shade of blue */
             cursor: pointer;
         }
 		
@@ -42,14 +46,38 @@
             background-color: #fff;
             margin: 10px;
         }
+		
+		/* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer img {
+            height: 50px; /* Adjust the height as needed */
+        }
     </style>
 </head>
 <body>
-    <h1>About the Hands-on Lab Workshop</h1>
+	<header>
+        <img src="opentechx-logo.png" alt="Logo" style="height: 50px;">
+	</header>
+	
+    <h1>Kubernetes 101</h1>
     <div>
-	    <p>In this hands-on lab workshop, we are going to deploy a sample foodmenu website for a restaurant.</p>
+		<h2>About the Hands-on Lab</h2>
+	    <p>In this hands-on lab workshop, we are going to deploy a static website into Kubernetes cluster.</p>
 		<p>The application is built using a HTML file and images. These files are packaged into a Docker image.</p>
-		<p>The Docker image is present on the public <a href="https://hub.docker.com/repository/docker/ckr123/food-menu-website/general">Docker Hub registry</a></p>
+		<p>The Docker image is stored on the public <a href="https://hub.docker.com/repository/docker/ckr123/food-menu-website/general">Docker Hub registry</a></p>
 		<br>
 		<p>Using kubectl commands, we will create below mentioned resources (marked in green square).</p>
 		<br>
@@ -288,7 +316,10 @@
         <img src="image8.png" alt="image8">
     </div>
 	<br>
-
+	
+	<footer>
+        <p>&copy; Created by Raghu Kumar CK - Organizer of OpenTechX meetup community.</p>
+    </footer>
 
 	<script>
         function copyToClipboard(elementId) {
